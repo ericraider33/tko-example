@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1>
+    TKO Example
+</h1>
+The DIV below is bound using knockout.<br>
+<br>
+NOTE: Notice the orange flicker due to run the bindings.<br>
+<br>
+<div id="page-root" style="background-color: orange;"  data-bind="attr: {'style': style}">
+    <div>
+        REPLACE WITH KO CONTENT<br>
+        <!--  Show an observable value.  -->
+        <div>The <code>view.observable</code> <em>{{ observable }}</em> is variable.</div>
+
+        <!--  Show a static value.  -->
+        <div>The <code>view.text</code> <em>{{ text }}</em></div>
+
+        <!--  Show a computed value.  -->
+        <div>The <code>view.computed</code> <em>{{ computed }}</em> is recalculated on changes to the observable.</div>
+
+        <!--  Link the observable value to a <input>  value.  -->
+        <input type='text' class='form-control' data-bind='textInput: observable' placeholder='Type the value for  `observable`'/>
+    </div>
+</div>
+
+<script src="https://unpkg.com/tko@4.0.0-alpha3/dist/ko.js"
+        integrity="sha384-W6Un9ta1JSOmCbK7YkdGGfyu+fDGY5e0II5CCyMKKXaYrpiJAt2q5YQH2ICQi4QA"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="sampleA.js"></script>
+</body>
+</html>

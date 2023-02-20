@@ -10,4 +10,9 @@ view.computed = ko.computed(() => view.observable().toUpperCase());
 let node = document.querySelector("#page-root");
 
 // Apply the bindings
-ko.applyBindings(view, node);
+ko
+    .applyBindings(view, node)
+    .then(() => 
+    {
+        node.style.display = "block";
+    });
