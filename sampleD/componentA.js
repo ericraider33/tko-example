@@ -1,8 +1,6 @@
-console.log('Parsed component A');
-
 export class ComponentA extends ko.Component
 {
-    constructor ({x, y})
+    constructor({x, y})
     {
         super();
         Object.assign(this, {x, y});
@@ -10,14 +8,14 @@ export class ComponentA extends ko.Component
         console.log('Constructor component A');
     }
 
-    static get elementName () 
+    static get elementName() 
     {
         return 'component-a';
     }
 
     static get template () { return '<div>ComponentA x={{x}} y={{y}}</div>'; }
 
-    static get sync () 
+    static get sync() 
     {
         return true;
     }
@@ -27,3 +25,6 @@ export class ComponentA extends ko.Component
         console.log('koDescendantsComplete: ComponentA');
     }
 }
+
+console.log('Registered component A');
+ComponentA.register();

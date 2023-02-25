@@ -3,10 +3,7 @@
 import { ComponentA } from './sampleD/componentA.js';
 import { ComponentB } from './sampleD/componentB.js';
 
-ComponentA.register()
-ComponentB.register()
-
-console.log('Done with component.register');
+console.log('Done with component.register ' + ComponentA.elementName + ComponentB.elementName);
 
 let node = document.querySelector("#page-root");
 let viewModel = {
