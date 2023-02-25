@@ -1,0 +1,25 @@
+<html>
+<body>
+<h1>
+    TKO Example - Sample C
+</h1>
+The DIV below is bound using TKO component. 
+<template id="ee-template">
+    x = {{ x }}
+</template>
+<div id="page-root">
+    HTML Custom Element<br>
+    <my-component params="x: 1234, y: 955, message: 'Expect big z big'"></my-component>
+
+    <br>
+    <br>
+    Div with data-bind, component<br>
+    <div data-bind="component: { name: 'my-component', params: { x: 12, y: 344, message: 'hi' }}">
+    </div>
+</div>
+
+<script src="https://unpkg.com/tko@4.0.0-alpha4a/dist/tko.js"
+        crossorigin="anonymous"></script>
+<script type="text/javascript"  src="sampleC.js"></script>
+</body>
+</html>
