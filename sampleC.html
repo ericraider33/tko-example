@@ -3,11 +3,11 @@
 <h1>
     TKO Example - Sample C
 </h1>
-The DIV below is bound using TKO component. 
-<template id="ee-template">
-    x = {{ x }}
-</template>
-<div id="page-root">
+<div style="padding-bottom: 30px;">
+    The DIV below is bound using TKO component.
+</div>
+
+<div id="page-root" style="display: none;">
     HTML Custom Element<br>
     <my-component params="x: 1234, y: 955, message: 'Expect big z big'"></my-component>
 
@@ -16,6 +16,10 @@ The DIV below is bound using TKO component.
     Div with data-bind, component<br>
     <div data-bind="component: { name: 'my-component', params: { x: 12, y: 344, message: 'hi' }}">
     </div>
+
+    <br>
+    <br>
+    {{ loaded() ? 'Loaded promise resolved' : 'Not Resolved Yet' }}
 </div>
 
 <script src="https://unpkg.com/tko@4.0.0-alpha5h/dist/tko.js"

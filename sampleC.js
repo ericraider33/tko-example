@@ -1,4 +1,6 @@
-﻿class MyComponent extends ko.Component 
+﻿let counter = 0;
+
+class MyComponent extends ko.Component 
 {
     /**
      * The ko.Component extends the LifeCycle
@@ -8,7 +10,9 @@
         super()
         Object.assign(this, {x, y, message})
         this.z = this.computed('computeZ');
-        this.message = ko.observable('NULL');
+        this.message = ko.observable('NULL: ' + counter);
+        
+        console.log('Constructor: ' + counter++);
     }
 
     /**
@@ -17,15 +21,6 @@
     static get elementName () {
         return 'my-component' // In DOM as <my-component>
     }
-
-    /**
-     * Use `element` to return:
-     *  1. a DOM node ID or a
-     *  2. DOM node.
-    static get element () {
-        return 'ee-template'
-    }
-     */
 
     /**
      * Overload `static get template` to minic the Knockout
@@ -48,10 +43,23 @@
 
     koDescendantsComplete()
     {
-        this.message("Fuck yeah, component is bound and an async event is triggered");
+        this.message("Fuck yeah, component is bound and an async event is triggered " + counter);
+        console.log('koDescendantsComplete: ' + counter++);
     }
 }
 
 MyComponent.register(/* custom-name */)
 
-ko.applyBindings({})
+let node = document.querySelector("#page-root");
+let viewModel = {
+    loaded: ko.observable(false)
+};
+
+ko
+    .applyBindings(viewModel, node)
+    .then(() =>
+    {
+        node.style.display = "block";
+        console.log('applyBindings promise: ' + counter++);
+        viewModel.loaded(true);
+    });
