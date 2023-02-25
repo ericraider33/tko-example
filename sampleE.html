@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1>
+    TKO Example - Sample E
+</h1>
+<div style="padding-bottom: 30px;">
+    NOTE: This is the same exact sample as D, but loaded via a webpack module.<br>
+    <br>
+    The DIV below is bound using TKO component loaded via ES6 Modules.
+</div>
+
+<div id="page-root" style="display: none;">
+    HTML Custom Element<br>
+    <component-a params="x: 6, y: 19"></component-a>
+
+    <br>
+    <br>
+    Div with data-bind, component<br>
+    <div data-bind="component: { name: 'component-b', params: { x: 5, y: 29 }}">
+    </div>
+
+    <br>
+    <br>
+    {{ loaded() ? 'Loaded promise resolved' : 'Not Resolved Yet' }}
+</div>
+
+<script src="https://unpkg.com/tko@4.0.0-alpha5h/dist/tko.js"
+        crossorigin="anonymous"></script>
+<script type="module"  src="sampleE.bundle.js"></script>
+</body>
+</html>

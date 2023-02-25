@@ -27,5 +27,5 @@ export class ComponentB extends ko.Component
 }
 
 console.log('Registered component B');
-ComponentB.register();
+ComponentB.register('component-b');
 
