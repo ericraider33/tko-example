@@ -1,13 +1,19 @@
 ﻿console.log('Parsed sampleF');
 
-import { ComponentA } from './sampleD/componentA.js';
-import { ComponentB } from './sampleD/componentB.js';
+import { ComponentA } from './sampleF/componentA.js';
+import { ComponentB } from './sampleF/componentB.js';
 
 console.log('Done with component.register ' + ComponentA.elementName + ComponentB.elementName);
 
 for (let key in ko.components._allRegisteredComponents)
 {
     let component = ko.components._allRegisteredComponents[key];
+    let viewModel = component.viewModel;
+    let response = await fetch(viewModel.templatePath);
+    let actualTemplate = await response.text();
+    component.template = actualTemplate;
+    viewModel.tempalte = actualTemplate;
+
     console.log('Component='+ key);
     console.log(component);
 }
