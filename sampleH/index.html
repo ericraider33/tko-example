@@ -4,7 +4,7 @@
     TKO Example - Sample H
 </h1>
 <div style="padding-bottom: 30px;">
-    The DIV below is bound using TKO component loaded via ES6 Modules for JS and webpack pack
+    The DIV below is bound using TKO component loaded via ES6 Modules for JS and HTML using web-pack bundling
 </div>
 
 <div id="page-root" style="display: none;">
@@ -21,9 +21,13 @@
     <br>
     {{ loaded() ? 'Loaded promise resolved' : 'Not Resolved Yet' }}
 </div>
+<h4>To Rebuild</h4>
+<code>
+    C:\dev\tko-example\sampleH> npx webpack --config index.config.js
+</code>
 
 <script src="https://unpkg.com/tko@4.0.0-alpha5h/dist/tko.js"
         crossorigin="anonymous"></script>
-<script type="module"  src="index.js"></script>
+<script type="module"  src="index.bundle.js"></script>
 </body>
 </html>
