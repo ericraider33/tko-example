@@ -6,4 +6,10 @@ To run example
 cd /dev/tko-example
 static 
 ```
-Then navigate to http://localhost:8080/ in browser
+Then navigate to http://localhost:8080/ in browser.
+
+To rebuild bundles, 
+```
+cd /dev/tko-example/sampleH
+webpack --config=index.config.js
+```

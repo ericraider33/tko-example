@@ -1,12 +1,10 @@
 <html>
 <body>
 <h1>
-    TKO Example - Sample H
+    TKO Example - Sample I
 </h1>
 <div style="padding-bottom: 30px;">
-    The DIV below is bound using TKO component loaded via ES6 Modules for JS and HTML using web-pack bundling.<br>
-    <br>
-    <i>NOTE:</i> Does not work without running webpack first, complicating development
+    The DIV below is bound using TKO component loaded via ES6 Modules for JS and HTML using require text
 </div>
 
 <div id="page-root" style="display: none;">
@@ -28,8 +26,7 @@
     C:\dev\tko-example\sampleH> npx webpack --config index.config.js
 </code>
 
-<script src="https://unpkg.com/tko@4.0.0-alpha5h/dist/tko.js"
-        crossorigin="anonymous"></script>
-<script type="module"  src="index.bundle.js"></script>
+<script src="https://unpkg.com/tko@4.0.0-alpha5h/dist/tko.js" crossorigin="anonymous"></script>
+<script type="module"  src="index.js"></script>
 </body>
 </html>
