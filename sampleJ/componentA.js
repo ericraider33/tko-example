@@ -1,8 +1,6 @@
 let template = await require('./componentA.html');
 console.log('loaded componentA template')
 
-import { require as _r } from './require.js';
-
 export class ComponentA extends ko.Component
 {
     constructor({x, y})
